@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "hello $(id -uG)"
+echo "hello $(id -nG)"
