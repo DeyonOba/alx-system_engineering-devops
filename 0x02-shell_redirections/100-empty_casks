@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type d -empty | ls -la
+find . -type d,f -empty | ls -la
