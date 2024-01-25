@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Remove the first part of the list of files in the current directory
+# and display the remain part
+
+for file in *; do
+	if [[ $file != .* ]]; then
+		new_file=$(echo "$file" | cut --delimiter='-' -f2-)
+
+		echo "$new_file"
+	fi
+done
