@@ -3,11 +3,11 @@
 
 var=1
 
-while [ $var -le 10 ]; do
-	if [ $var -ne 9 ]; then
-		echo "Best School"
+while [ $var -lt 10 ]; do
+	if [ $var -eq 8 ]; then
+		echo -e "Best School\nHi"
 	else
-		echo "Hi"
+		echo "Best School"
 	fi
 	((var++))
 done
