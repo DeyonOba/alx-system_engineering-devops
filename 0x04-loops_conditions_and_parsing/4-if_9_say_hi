@@ -3,8 +3,8 @@
 
 var=1
 
-while [ $var -lt 10 ]; do
-	if [ $var -eq 8 ]; then
+while [ $var -le 10 ]; do
+	if [ $var -eq 9 ]; then
 		echo -e "Best School\nHi"
 	else
 		echo "Best School"
