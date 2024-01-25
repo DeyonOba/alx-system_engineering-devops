@@ -9,6 +9,6 @@ for ((i = 0; i <= 100; i++)); do
 	elif ((i % 3 == 0)); then
 		echo "Fizz"
 	else
-		echo "$i"
+		echo $i
 	fi
 done
