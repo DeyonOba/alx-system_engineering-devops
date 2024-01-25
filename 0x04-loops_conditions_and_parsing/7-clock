@@ -2,9 +2,9 @@
 # Display "Hour: `hour_number`", and then each minute from 0 to 59
 # on a new line
 
-hour=1
+hour=0
 
-while [ $hour -lt 12 ]; do
+while [ $hour -le 12 ]; do
 	echo "Hour: $hour"
 
 	minute=1
