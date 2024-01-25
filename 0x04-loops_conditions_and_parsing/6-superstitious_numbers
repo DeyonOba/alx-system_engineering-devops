@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script displays "bad luck from China" on the 4th iteration then
+# display "bad luck from Japan" on the 9th iteration, and finally
+# display "bad luck from Italy" on the 17th iteration, else print iteration number
+
+var=1
+
+while [ $var -le 20 ]; do
+	case $var in
+		4)
+			echo -e "$var\nbad luck from China"
+			;;
+		9)
+			echo -e "$var\nbad luck from Japan"
+			;;
+		17)
+			echo -e "$var\nbad luck from Italy"
+			;;
+		*)
+			echo "$var"
+		esac
+
+	((var++))
+done
