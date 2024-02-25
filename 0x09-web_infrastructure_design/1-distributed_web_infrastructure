@@ -5,7 +5,7 @@ What Distributuion Algorithm the Load Balancer is configured with?
 The load-balancer is configured with HAProxy of Round Robin algorithm for distribution. The Round Robin algorithm distributes queries to servers in a sequential manner. After reaching the last server, it loops back to the first one. As a result, each server handles approximately 50% of the load in a two-server configuration.
 
 Is your load-balancer enabling an Active-Active or Active-Passive setup? Explain the both:
-Our Load Balancer is enabling Active-passive set-up and not Active-Active, therefore, all nodes are going to be active simultaneously. Active-Active is the type of set up that distributes workloads across multiple nodes for load balancing,
+Our Load Balancer is enabling Active-passive set-up and not Active-Active, therefore, when one node is active the other is inactive. Active-Active is the type of set up that distributes workloads across multiple nodes for load balancing,
 while Active-Passive will ensures service continuity with a standby node ready for failover.
 
 How a database Primary-Replica (Master-Slave) cluster works?
