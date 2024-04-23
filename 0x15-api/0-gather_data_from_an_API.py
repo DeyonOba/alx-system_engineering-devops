@@ -5,7 +5,7 @@ import requests
 import sys
 
 
-def get_todo_progress(employee_id):
+def get_todo_list_progress(employee_id):
     """Get users to do list progress.
 
     Parameters:
@@ -26,21 +26,20 @@ def get_todo_progress(employee_id):
 
     # Store employee  and to-do list data as dict
     employee_data = user_request.json()
-    todo_list_data = todo_list_request.json()
+    todo_data = todo_list_request.json()
 
     # Extract employee info
     employee_name = employee_data.get('name')
-    total_tasks = len(todo_list_data)
-    num_cmp_tsks = [1 if tsk.get('completed') else 0 for tsk in todo_list_data]
-    num_complete_tasks = sum(num_cmp_tsks)
+    total_tasks = len(todo_data)
+    num_complete_tasks = sum(task.get('completed') for task in todo_data)
 
     print("Employee {} is done with tasks({}/{}):".format(
         employee_name, num_complete_tasks, total_tasks
     ))
     # Display title of completed tasks
-    for tsk in todo_list_data:
-        if tsk.get('completed'):
-            print(f"\t {tsk.get('title')}")
+    for task in todo_data:
+        if task.get('completed'):
+            print("\t {}".format(task.get('title')))
 
 
 if __name__ == "__main__":
@@ -51,4 +50,4 @@ if __name__ == "__main__":
         sys.exit(1)
 
     employee_id = sys.argv[1]
-    get_todo_progress(employee_id)
+    get_todo_list_progress(employee_id)
