@@ -38,7 +38,7 @@ def get_todo_list_progress(employee_id):
     ))
     # Display title of completed tasks
     for task in todo_data:
-        if task.get('completed'):
+        if task.get('completed', False):
             print("\t {}".format(task.get('title')))
 
 
