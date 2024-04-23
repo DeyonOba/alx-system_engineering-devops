@@ -33,7 +33,7 @@ def get_todo_list_progress(employee_id):
     total_tasks = len(todo_data)
     num_complete_tasks = sum(task.get('completed') for task in todo_data)
 
-    print("Employee {} is done with tasks({}/{}):".format(
+    print("Employee {} is done with tasks ({}/{}):".format(
         employee_name, num_complete_tasks, total_tasks
     ))
     # Display title of completed tasks
