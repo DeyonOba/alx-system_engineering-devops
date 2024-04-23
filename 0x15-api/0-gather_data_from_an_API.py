@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Module returns the list of users to-do list progress."""
 
-import sys
 import requests
+import sys
 
 
 def get_todo_progress(employee_id):
