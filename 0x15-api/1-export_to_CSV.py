@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module returns the list of users to-do list progress."""
 
-import os
+import csv
 import requests
 import sys
 
@@ -33,19 +33,17 @@ def get_todo_list_progress_csv(employee_id):
 
     # Extract employee info
     employee_username = employee_data.get('username')
-    total_tasks = len(todo_data)
-    num_complete_tasks = sum(task.get('completed') for task in todo_data)
 
-    for task in todo_data:
-        task_completed_status = task.get("completed", False)
-        task_title = task.get("title")
+    with open(f"{employee_id}.csv", "w") as csv_file:
+        csv_writer = csv.writer(csv_file)
 
-        with open(f"{employee_id}.csv", "a") as file:
-            file.writelines(",".join([
-                str(employee_id), employee_username,
-                str(task_completed_status), task_title
-            ]))
-            file.write("\n")
+        for task in todo_data:
+            task_list = [
+                employee_id, employee_username,
+                task.get("completed", False),
+                task.get("title")
+                ]
+            csv_writer.writerow(task_list)
 
 
 if __name__ == "__main__":
