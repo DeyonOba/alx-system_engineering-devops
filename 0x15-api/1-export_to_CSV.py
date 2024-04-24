@@ -35,7 +35,7 @@ def get_todo_list_progress_csv(employee_id):
     employee_username = employee_data.get('username')
 
     with open(f"{employee_id}.csv", "w") as csv_file:
-        csv_writer = csv.writer(csv_file)
+        csv_writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
 
         for task in todo_data:
             task_list = [
