@@ -25,7 +25,7 @@
 ### Corrective and Preventative Measures:
 
 - **Improvements/Fixes**: To prevent future mishaps, we'll be enhancing our monitoring systems to catch anomalies before they snowball into outages. Additionally, regular audits of network configurations will become as routine as our morning coffee.
-- 
+ 
 ### Tasks to Address the Issue:
 - Implement automated network configuration checks to catch misconfigurations before they wreak havoc.
 - Conduct a thorough review of all network infrastructure to ensure it's playing nice with each other.
