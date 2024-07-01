@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Script that display it own PID on execution.
+echo "$$"
